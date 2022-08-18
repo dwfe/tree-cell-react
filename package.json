@@ -1,0 +1,44 @@
+{
+  "name": "@do-while-for-each/tree-cell-react",
+  "description": "",
+  "version": "1.0.0",
+  "exports": "./dist/cjs/index.js",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
+  },
+  "homepage": "https://github.com/dwfe/tree-cell-react",
+  "bugs": "https://github.com/dwfe/tree-cell-react/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dwfe/tree-cell-react.git"
+  },
+  "keywords": [],
+  "author": "Do|While|For|Each",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@do-while-for-each/tsconfig": "1.x.x"
+  },
+  "scripts": {
+    "clean": "dwfeFs cleanDir . --fileNames=\"dist;node_modules;package-lock.json\"",
+    "bootstrap": "npm run clean && npm install",
+    "build": "dwfeFs rmForce dist --noConfirm && tsc -b src/tsconfig.json",
+    "test": "jest --config=src/__tests__/jest.config.js",
+    "version": "npm run build && npm run test",
+    "postversion": "git push",
+    "deploy": "npm version patch && npm publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
