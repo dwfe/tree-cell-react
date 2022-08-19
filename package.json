@@ -24,9 +24,13 @@
     "LICENSE",
     "README.md"
   ],
+  "peerDependencies": {
+    "react": "18.x.x"
+  },
   "dependencies": {
   },
   "devDependencies": {
+    "@do-while-for-each/react-cmmn-packs": "1.x.x",
     "@do-while-for-each/tsconfig": "1.x.x"
   },
   "scripts": {
