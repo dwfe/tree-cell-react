@@ -30,9 +30,9 @@ export function cellState<TState>(
       initState[key] = value;
   }
   if (data.length) {
-    const didMountOrig = component.componentDidMount;
+    const origDidMount = component.componentDidMount;
     component.componentDidMount = function () {
-      didMountOrig.call(component);
+      origDidMount.call(component);
       for (const [cell, key] of data) {
         cell.onChange(({error, value}) => {
           if (error)
@@ -43,9 +43,9 @@ export function cellState<TState>(
         cell.offChange(noop);
       }
     };
-    const willUnmountOrig = component.componentWillUnmount;
+    const origWillUnmount = component.componentWillUnmount;
     component.componentWillUnmount = function () {
-      willUnmountOrig.call(component);
+      origWillUnmount.call(component);
       for (const [cell] of data)
         cell.dispose();
     };
