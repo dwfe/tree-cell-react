@@ -11,7 +11,7 @@ export function cellState<TState>(
     throw new Error('handlers need to be passed');
   }
   const data: [Cell, string][] = [];
-  const initState: Partial<TState> = {};
+  const initState: TState = {} as TState;
 
   for (const [key, value] of Object.entries(handlers)) {
     if (typeof value === 'function') {
@@ -21,6 +21,7 @@ export function cellState<TState>(
       cell.onChange(noop);
       data.push([cell, key]);
       try {
+        //@ts-ignore
         initState[key] = cell.get();
       } catch (error) {
         console.error(`initialization, this.state.${key}`, component, error);
@@ -32,7 +33,7 @@ export function cellState<TState>(
   if (data.length) {
     const origDidMount = component.componentDidMount;
     component.componentDidMount = function () {
-      origDidMount.call(component);
+      origDidMount?.call(component);
       for (const [cell, key] of data) {
         cell.onChange(({error, value}) => {
           if (error)
@@ -45,7 +46,7 @@ export function cellState<TState>(
     };
     const origWillUnmount = component.componentWillUnmount;
     component.componentWillUnmount = function () {
-      origWillUnmount.call(component);
+      origWillUnmount?.call(component);
       for (const [cell] of data)
         cell.dispose();
     };
