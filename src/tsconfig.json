@@ -6,7 +6,8 @@
     "outDir": "../dist/cjs",
     "declarationDir": "../dist/types",
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
     "__tests__"

@@ -21,13 +21,11 @@ export function cellState<TState>(
       cell.onChange(noop);
       data.push([cell, key]);
       try {
-        //@ts-ignore
-        initState[key] = cell.get();
+        initState[key] = cell.get()[key];
       } catch (error) {
         console.error(`initialization, this.state.${key}`, component, error);
       }
     } else
-      //@ts-ignore
       initState[key] = value;
   }
   if (data.length) {
