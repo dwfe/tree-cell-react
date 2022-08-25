@@ -23,7 +23,7 @@ export function cellState<TState>(
       try {
         initState[key] = cell.get()[key];
       } catch (error) {
-        console.error(`state initialization: this.state.${key}`, component, error);
+        console.error(`state initialization error: this.state.${key}`, component, error);
       }
     } else
       initState[key] = value;
