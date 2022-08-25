@@ -23,7 +23,7 @@ export function cellState<TState>(
       try {
         initState[key] = cell.get()[key];
       } catch (error) {
-        console.error(`initialization, this.state.${key}`, component, error);
+        console.error(`state initialization: this.state.${key}`, component, error);
       }
     } else
       initState[key] = value;
@@ -35,7 +35,7 @@ export function cellState<TState>(
       for (const [cell, key] of data) {
         cell.onChange(({error, value}) => {
           if (error)
-            console.error(`this.state.${key}`, component, error);
+            console.error(`state error: this.state.${key}`, component, error);
           else
             component.setState(value);
         });
