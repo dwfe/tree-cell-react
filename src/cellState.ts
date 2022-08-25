@@ -11,7 +11,7 @@ export function cellState<TState>(
     throw new Error('handlers need to be passed');
   }
   const data: [Cell, string][] = [];
-  const initState: TState = {} as TState;
+  const state: TState = {} as TState;
 
   for (const [key, value] of Object.entries(handlers)) {
     if (typeof value === 'function') {
@@ -21,12 +21,12 @@ export function cellState<TState>(
       cell.onChange(noop);
       data.push([cell, key]);
       try {
-        initState[key] = cell.get()[key];
+        state[key] = cell.get()[key];
       } catch (error) {
         console.error(`state initialization error: this.state.${key}`, component, error);
       }
     } else
-      initState[key] = value;
+      state[key] = value;
   }
   if (data.length) {
     const origDidMount = component.componentDidMount;
@@ -49,7 +49,7 @@ export function cellState<TState>(
         cell.dispose();
     };
   }
-  return initState as TState;
+  return state as TState;
 }
 
 function noop() {
