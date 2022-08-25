@@ -7,7 +7,7 @@ export function cellState<TState>(
     [key in keyof TState]?: TState[key] | (() => TState[key])
   }
 ): TState {
-  if (Object.keys(handlers).length === 0) {
+  if (!handlers || Object.keys(handlers).length === 0) {
     throw new Error('handlers need to be passed');
   }
   const data: [Cell, string][] = [];
