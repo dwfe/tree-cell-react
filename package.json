@@ -28,11 +28,11 @@
     "react": "18.x.x"
   },
   "dependencies": {
-    "@do-while-for-each/tree-cell": "../../tree-cell/do-while-for-each-tree-cell-1.0.0.tgz"
+    "@do-while-for-each/tree-cell": "1.0.1"
   },
   "devDependencies": {
-    "@do-while-for-each/react-cmmn-packs": "1.x.x",
-    "@do-while-for-each/tsconfig": "1.x.x"
+    "@do-while-for-each/react-cmmn-packs": "1.0.1",
+    "@do-while-for-each/tsconfig": "1.0.4"
   },
   "scripts": {
     "clean": "dwfeFs cleanDir . --fileNames=\"dist;node_modules;package-lock.json\"",
