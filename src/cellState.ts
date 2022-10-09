@@ -1,5 +1,6 @@
-import {Cell} from '@do-while-for-each/tree-cell';
-import {Component} from 'react';
+import {Cell} from '@do-while-for-each/tree-cell'
+import {Component} from 'react'
+import {noop} from './util'
 
 export function cellState<TState>(
   component: Component<TState>,
@@ -50,7 +51,4 @@ export function cellState<TState>(
     };
   }
   return state as TState;
-}
-
-function noop() {
 }

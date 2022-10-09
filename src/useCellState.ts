@@ -1,5 +1,6 @@
-import {Cell, Fn} from '@do-while-for-each/tree-cell'
 import {useCallback, useEffect, useState} from 'react'
+import {Cell, Fn} from '@do-while-for-each/tree-cell'
+import {noop} from './util'
 
 export function useCellState<TValue>(val: Fn<TValue> | TValue): [
   TValue,                     // value
@@ -29,7 +30,4 @@ export function useCellState<TValue>(val: Fn<TValue> | TValue): [
   }, []);
 
   return [value, setValue, cell];
-}
-
-function noop() {
 }
