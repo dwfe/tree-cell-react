@@ -28,6 +28,7 @@
     "react": "18.x.x"
   },
   "dependencies": {
+    "@do-while-for-each/common": "1.2.48",
     "@do-while-for-each/tree-cell": "1.0.1"
   },
   "devDependencies": {

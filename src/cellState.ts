@@ -1,6 +1,6 @@
 import {Cell} from '@do-while-for-each/tree-cell'
+import {noop} from '@do-while-for-each/common';
 import {Component} from 'react'
-import {noop} from './util'
 
 export function cellState<TState>(
   component: Component<TState>,
