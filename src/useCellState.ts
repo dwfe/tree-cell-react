@@ -39,7 +39,7 @@ export function useCellState<TValue>(val: Fn<TValue> | TValue, opt: IOpt = {}): 
     return cell;
   });
 
-  const [value, realValueSetter] = useState(cell.get());
+  const [value, realValueSetter] = useState(() => cell.get());
   if (valueSetter === undefined) {
     valueSetter = realValueSetter;
   }
