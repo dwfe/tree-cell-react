@@ -8,8 +8,5 @@
     "declaration": true,
     "declarationMap": true,
     "suppressImplicitAnyIndexErrors": true
-  },
-  "exclude": [
-    "__tests__"
-  ]
+  }
 }
