@@ -1,13 +1,3 @@
-# Installation
+`cellState` – for React Class Components
 
-Install by npm:
-
-```shell
-npm install --save @do-while-for-each/tree-cell-react
-```
-
-or install with yarn:
-
-```shell
-yarn add @do-while-for-each/tree-cell-react
-```
+`useCellState` – for React Function Components
