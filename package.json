@@ -39,7 +39,6 @@
     "clean": "dwfeFs cleanDir . --fileNames=\"dist;node_modules;package-lock.json\"",
     "bootstrap": "npm run clean && npm install",
     "build": "dwfeFs rmForce dist --noConfirm && tsc -b src/tsconfig.json",
-    "test": "jest --config=src/__tests__/jest.config.js",
     "version": "npm run build",
     "deploy": "npm version patch && npm publish",
     "tgz": "npm run build && npm pack"
