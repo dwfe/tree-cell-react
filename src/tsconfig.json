@@ -7,6 +7,6 @@
     "declarationDir": "../dist/types",
     "declaration": true,
     "declarationMap": true,
-    "suppressImplicitAnyIndexErrors": true
+    "noImplicitAny": false
   }
 }
