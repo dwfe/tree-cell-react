@@ -2,12 +2,12 @@
   "name": "@do-while-for-each/tree-cell-react",
   "description": "React.js tools for tree-cell",
   "version": "18.0.4",
-  "exports": "./dist/cjs/index.js",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "dist/types/*"
-      ]
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
     }
   },
   "homepage": "https://github.com/dwfe/tree-cell-react",
